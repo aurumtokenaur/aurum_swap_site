@@ -366,7 +366,7 @@ body {
   .chart-container, canvas {
   max-width: 100% !important;
   height: auto !important;
-  margin: 0 auto 20px auto; /* adiciona espaço embaixo */
+  margin: 0 auto 30px auto; /* adiciona espaço embaixo */
   display: block;
 }
 
