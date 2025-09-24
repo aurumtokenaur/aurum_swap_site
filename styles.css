@@ -360,15 +360,6 @@ body {
   .nav-bar img {
     max-height: 35px;       /* diminui logo */
   }
-}
-
-  /* Gráfico de pizza na tokenomics */
-  .chart-container, canvas {
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 0 auto 50px auto; /* adiciona espaço embaixo */
-  display: block;
-}
 
   }
 
