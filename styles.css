@@ -366,7 +366,7 @@ body {
   .chart-container, canvas {
   max-width: 100% !important;
   height: auto !important;
-  margin: 0 auto 30px auto; /* adiciona espaço embaixo */
+  margin: 0 auto 50px auto; /* adiciona espaço embaixo */
   display: block;
 }
 
@@ -384,15 +384,7 @@ body {
   }
 }
 
-  .tokenomics-section {
-    padding-bottom: 120px; /* força espaço extra no fim da página */
-  }
-
-  .tokenomics-table td, 
-  .tokenomics-table th {
-    font-size: 0.8rem; /* fonte menor pra caber bem */
-    padding: 6px;
-  }
-}
+  
+  
 
 
