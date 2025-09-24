@@ -344,18 +344,23 @@ body {
     width: 100%;
     margin: 10px 0;
   }
-  /* Ajustes adicionais para celular */
+  /* Ajuste do menu para celular */
 @media (max-width: 768px) {
-
-  /* Botões principais */
   .nav-links a {
-    display: block;
-    margin: 12px auto;
-    padding: 12px 16px;
-    font-size: 16px;
-    text-align: center;
-    width: 90%; /* ocupa quase toda a tela no mobile */
+    margin: 6px auto;       /* antes estava 12px */
+    padding: 6px 10px;      /* antes estava 12px 16px */
+    font-size: 14px;        /* diminui um pouco */
+    width: 85%;             /* ainda ocupa boa parte da tela */
   }
+
+  .nav-bar {
+    padding: 4px 8px;       /* menos espaço interno */
+  }
+
+  .nav-bar img {
+    max-height: 35px;       /* diminui logo */
+  }
+}
 
   /* Gráfico de pizza na tokenomics */
   .chart-container, canvas {
