@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Aurum Token — Official Presale</title>
+
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- ticker.js -->
+  <script src="ticker.js" defer></script>
+
+  <!-- ethers.js -->
+  <script src="https://unpkg.com/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <!-- app.js (intocável) -->
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="./assets/aurum-logo.png" alt="Aurum Token" class="nav-logo"/>
+      <span class="nav-title">Aurum Token</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Presale</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="tokenomics.html">Tokenomics</a>
+      <a href="about.html">About</a>
+      <a href="whitepaper.html">Whitepaper</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+<!-- 🔝 Ticker -->
+<div class="ticker" id="prices">
+  <div id="tickerLane" class="lane">
+    <span class="item">Loading prices...</span>
+  </div>
+  <div id="topCountdown" class="top-countdown"></div>
+</div>
+
+  <div class="wrap">
+    <!-- Logo girando -->
+    <div class="logo-container">
+      <img src="./assets/aurum-logo.png" alt="Aurum Token" class="logo-spin"/>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+      <h1>🚀 Aurum Token — Official Presale</h1>
+      <p class="sub">Join the exclusive presale of <b>Aurum Token (AUR)</b>, built on the BNB Smart Chain.</p>
+      <ul class="details">
+        <li><b>Available offer:</b> 200,000 AUR (released in batches)</li>
+        <li><b>Initial price:</b> $0.10 per AUR (~ in BNB, updated in real time)</li>
+        <li><b>Presale Contract:</b>
+          <a id="contractLink" href="https://bscscan.com/address/0xac958de36acfbb1dce325140973799475ed9493e" target="_blank" rel="noopener">
+            0xac958de36acfbb1dce325140973799475ed9493e
+          </a>
+        </li>
+      </ul>
+
+      <div class="info">
+        ✅ Send BNB to the presale contract and automatically receive AUR tokens.<br/>
+        🔒 The contract is official and verified on BscScan.<br/>
+        📌 Always double-check the address above before investing.
+      </div>
+
+      <div class="kpi">
+        <span id="netBadge" class="pill">🌐 Network: —</span>
+        <span id="acctBadge" class="pill">👛 Account: —</span>
+        <span id="balBadge" class="pill right">💰 Balance: —</span>
+      </div>
+
+      <!-- Presale Status -->
+      <div id="presaleStatus" class="presale-status">
+        <div class="progress-wrap"><div id="progressBar" class="progress"></div></div>
+        <div id="progressText" class="hint">0 / 0 AUR sold in this batch (0%)</div>
+      </div>
+    </div>
+
+    <!-- Validate contract -->
+    <div class="card">
+      <h3>Validate Contract</h3>
+      <div class="row validate-row">
+        <input id="tokenAddr" type="text" placeholder="Paste the contract address"/>
+        <button id="validateBtn" class="btn">✅ Validate</button>
+      </div>
+      <div id="tokenStatus" class="hint">
+        Official address:
+        <a href="https://bscscan.com/address/0xac958de36acfbb1dce325140973799475ed9493e" target="_blank">
+          0xac958de36acfbb1dce325140973799475ed9493e
+        </a>
+      </div>
+    </div>
+
+    <!-- Join Presale -->
+    <div class="card">
+      <h3>Join the Presale</h3>
+      <div class="countdown-block">
+        <div class="countdown-icon">⏳</div>
+        <div class="countdown-text">
+          <div class="countdown-label">Remaining Presale Time</div>
+          <div id="countdown" class="countdown-timer">Loading...</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="connectBtn" class="btn">🔗 Connect Wallet</button>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <input id="bnbAmount" type="text" placeholder="Enter amount in BNB"/>
+        <button id="buyBtn" class="btn" disabled>💰 Buy AUR</button>
+      </div>
+
+      <div id="priceInfo" class="hint">Estimated amount: —</div>
+      <div id="status" class="hint"></div>
+
+      <div class="security-box">
+        <h3>⚠️ Security Notice</h3>
+        <p>✅ Always make sure you are on the <strong>official Aurum site</strong>.</p>
+        <ul>
+          <li>1️⃣ Connect your wallet (MetaMask / TrustWallet)</li>
+          <li>2️⃣ Enter the amount in BNB</li>
+          <li>3️⃣ Click <strong>Buy AUR</strong> and confirm in your wallet</li>
+        </ul>
+        <p>💬 Join our community for updates:
+          <a href="https://t.me/+K89vByqHzvU2NGY0" target="_blank">Official Telegram Group</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Roadmap dentro da Index -->
+    <div class="card">
+      <h3>📌 Roadmap — Project Evolution</h3>
+<p class="sub">
+The roadmap below shows the <b>evolution of our official website</b>.  
+It starts as the <b>Presale</b> page and step by step will expand into a  
+complete platform — with <b>direct swaps, staking, and trading</b>.  
+Over time, this same section will grow from a simple presale area  
+into a <b>mini-exchange for Aurum Token</b>.
+</p>
+
+      <div class="roadmap-boxes">
+        <div class="roadmap-step active">
+          <div class="phase-title">Phase 1 — Presale</div>
+          <div class="phase-desc">Initial sale of AUR via the smart contract on this page.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="phase-title">Phase 2 — PancakeSwap Launch</div>
+          <div class="phase-desc">Listing AUR/BNB on PancakeSwap with liquidity.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="phase-title">Phase 3 — Mini Swap</div>
+          <div class="phase-desc">Simple AUR ⇆ BNB swap directly on the website.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="phase-title">Phase 4 — Staking</div>
+          <div class="phase-desc">Rewards system for users locking AUR for set periods.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="phase-title">Phase 5 — AurumSwap (DEX)</div>
+          <div class="phase-desc">Full DEX with liquidity pools and trading features.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Countdown script -->
+  <script>
+    (function(){
+      const countdownEl=document.getElementById("countdown");
+      const end=new Date("2025-11-05T00:00:00Z").getTime();
+      function update(){
+        const now=Date.now(); const diff=end-now;
+        if(diff<=0){countdownEl.textContent="Closed";return;}
+        const d=Math.floor(diff/86400000),
+              h=Math.floor((diff%86400000)/3600000),
+              m=Math.floor((diff%3600000)/60000),
+              s=Math.floor((diff%60000)/1000);
+        countdownEl.textContent=`${d}d ${h}h ${m}m ${s}s`;
+      }
+      setInterval(update,1000); update();
+    })();
+  </script>
+</body>
+</html>

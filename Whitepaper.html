@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Aurum Token — Whitepaper</title>
+
+  <!-- CSS global (intocável) -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Ethers (se precisar em algum trecho futuro) -->
+  <script src="https://unpkg.com/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <!-- Ticker global (intocável) -->
+  <script defer src="ticker.js"></script>
+</head>
+<body>
+
+  <!-- Navbar (ordem padronizada) -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="./assets/aurum-logo.png" alt="Aurum Token" class="nav-logo"/>
+      <span class="nav-title">Aurum Token</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Presale</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="tokenomics.html">Tokenomics</a>
+      <a href="about.html">About</a>
+      <a href="whitepaper.html" class="active">Whitepaper</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Ticker fino (usa estilos do styles.css e lógica do ticker.js) -->
+  <div class="ticker" id="prices">
+    <div id="tickerLane" class="lane"><span class="item">Loading prices...</span></div>
+    <div id="topCountdown" class="top-countdown"></div>
+  </div>
+
+  <main class="wrap">
+    <!-- Card principal do Whitepaper -->
+    <div class="card">
+      <h1>📄 Aurum Token — Whitepaper</h1>
+      <p class="sub">A complete, high-level view of Aurum’s vision, structure, and long-term plan.</p>
+
+      <!-- 1. Introduction -->
+      <section id="introduction" class="wp-section">
+        <h2>1. Introduction</h2>
+        <p>
+          <strong>Aurum Token (AUR)</strong> is built on the BNB Smart Chain with a fixed total supply of
+          <strong>1,000,000 AUR</strong>. Inspired by the timeless strength and scarcity of gold,
+          Aurum brings solid tokenomics together with real usability across DeFi and future integrations.
+        </p>
+        <p>
+          Smart-contract link (BscScan): 
+          <a href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d" target="_blank" rel="noopener">
+            0xad8e960ae1d06b5ab4b49a872649e90af040f91d
+          </a>.
+        </p>
+      </section>
+
+      <!-- 2. Vision & Mission -->
+      <section id="vision" class="wp-section">
+        <h2>2. Vision & Mission</h2>
+        <ul class="details">
+          <li><b>Beyond a token:</b> build a robust ecosystem: presale → PancakeSwap → MiniSwap → Staking → DEX.</li>
+          <li><b>Global inclusion:</b> bring “digital gold” value to anyone, anywhere.</li>
+          <li><b>Durability & growth:</b> mechanisms designed for long-term holders and sustainable expansion.</li>
+          <li><b>Social impact (long-term):</b> education & essentials initiatives in regions historically deprived of their natural wealth.</li>
+        </ul>
+      </section>
+
+      <!-- 3. Token Distribution -->
+      <section id="distribution" class="wp-section">
+        <h2>3. Token Distribution</h2>
+        <ul class="details">
+          <li>Presale: <b>200,000 AUR</b></li>
+          <li>Liquidity: <b>300,000 AUR</b></li>
+          <li>Team (vesting): <b>150,000 AUR</b></li>
+          <li>Marketing: <b>100,000 AUR</b></li>
+          <li>Staking: <b>100,000 AUR</b></li>
+          <li>Treasury: <b>100,000 AUR</b></li>
+          <li>Burn (manual & gradual): <b>50,000 AUR</b></li>
+        </ul>
+        <p class="hint">
+          A full interactive allocation chart is available on the <a href="tokenomics.html">Tokenomics</a> page.
+        </p>
+      </section>
+
+      <!-- 4. Roadmap (high-level, consistente com a página Roadmap) -->
+      <section id="roadmap" class="wp-section">
+        <h2>4. Roadmap — High-Level</h2>
+        <div class="roadmap-boxes">
+          <div class="roadmap-step active">
+            <div class="phase-title">Phase 1 — Presale ✅</div>
+            <div class="phase-desc">Official smart contract presale on our site.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 2 — PancakeSwap 🔒</div>
+            <div class="phase-desc">AUR/BNB listing with <b>300k AUR</b> locked as liquidity.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 3 — MiniSwap ⚡</div>
+            <div class="phase-desc">Simple AUR ⇆ BNB swap integrated into our site.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 4 — Staking ⛓️</div>
+            <div class="phase-desc">Reward pools for holders who lock AUR.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 5 — AurumSwap (DEX) 🌐</div>
+            <div class="phase-desc">Full DEX with liquidity pools, farming, and pro tools.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 6 — Treasury & Payments 💳</div>
+            <div class="phase-desc">Treasury operations (100k AUR) + card rails (Visa/Mastercard) integrations.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 7 — Expansion 🌍</div>
+            <div class="phase-desc">CEX listings, strategic partnerships, and global marketing.</div>
+          </div>
+          <div class="roadmap-step">
+            <div class="phase-title">Phase 8 — Social Programs 🎓🍞</div>
+            <div class="phase-desc">Education & essentials programs funded from dedicated allocations.</div>
+          </div>
+        </div>
+        <p class="hint">For a more detailed, phase-by-phase view, see the <a href="roadmap.html">Roadmap</a> page.</p>
+      </section>
+
+      <!-- 5. Security -->
+      <section id="security" class="wp-section">
+        <h2>5. Security & Transparency</h2>
+        <ul class="details">
+          <li>Verified smart contract on BNB Smart Chain.</li>
+          <li>Liquidity locked after PancakeSwap listing.</li>
+          <li>Manual, transparent, gradual burn of 50,000 AUR.</li>
+          <li>Clear communications through official channels.</li>
+          <li>Planned third-party audit (e.g., CertiK) as milestones progress.</li>
+        </ul>
+      </section>
+
+      <!-- 6. Conclusion -->
+      <section id="conclusion" class="wp-section">
+        <h2>6. Conclusion</h2>
+        <p>
+          Aurum is more than a project; it’s a journey of trust, growth, and real-world utility.
+          By uniting the timeless idea of gold with Web3, AUR aims to be a long-lasting store of value
+          and a practical medium of exchange. We invite the community to build this legacy together.
+        </p>
+      </section>
+
+      <!-- CTA / Links oficiais -->
+      <section class="wp-section">
+        <h2>Official Links</h2>
+        <ul class="details">
+          <li>Contract (BscScan): 
+            <a href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d" target="_blank" rel="noopener">
+              0xad8e960ae1d06b5ab4b49a872649e90af040f91d
+            </a>
+          </li>
+          <li>Telegram: <a href="https://t.me/+K89vByqHzvU2NGY0" target="_blank" rel="noopener">Official Group</a></li>
+          <li>X (Twitter): <a href="https://x.com/Aurumaur_" target="_blank" rel="noopener">@Aurumaur_</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Aurum Token — Contact</title>
+
+  <!-- CSS global (intocável) -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Ticker (intocável) -->
+  <script defer src="ticker.js"></script>
+</head>
+<body>
+  <!-- Navbar (ordem padronizada) -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="./assets/aurum-logo.png" alt="Aurum Token" class="nav-logo"/>
+      <span class="nav-title">Aurum Token</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Presale</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="tokenomics.html">Tokenomics</a>
+      <a href="about.html">About</a>
+      <a href="whitepaper.html">Whitepaper</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Ticker fino -->
+  <div class="ticker" id="prices">
+    <div id="tickerLane" class="lane"><span class="item">Loading prices...</span></div>
+    <div id="topCountdown" class="top-countdown"></div>
+  </div>
+
+  <!-- Conteúdo -->
+  <main class="wrap">
+    <div class="card">
+      <h1>📬 Contact Us</h1>
+      <p class="sub">We’d love to hear from you. For proposals, questions, or collaborations — send us a message.</p>
+
+      <section class="wp-section">
+        <ul class="details">
+          <li>📧 Email: <a href="mailto:aurumtoken2025@gmail.com">aurumtoken2025@gmail.com</a></li>
+          <li>💬 Telegram: <a href="https://t.me/+K89vByqHzvU2NGY0" target="_blank" rel="noopener">Official Group</a></li>
+          <li>🐦 X (Twitter): <a href="https://x.com/Aurumaur_" target="_blank" rel="noopener">@Aurumaur_</a></li>
+        </ul>
+      </section>
+
+      <section class="wp-section">
+        <!-- sem onsubmit para evitar bloqueios do mailto -->
+        <form id="contactForm" autocomplete="on">
+          <label for="name">Your Name</label>
+          <input id="name" type="text" placeholder="Enter your name" required/>
+
+          <label for="email">Your Email</label>
+          <input id="email" type="email" placeholder="Enter your email" required/>
+
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
+
+          <button id="sendBtn" type="button" class="btn-primary">📩 Send Message</button>
+        </form>
+
+        <p class="hint" id="gmailNote" style="display:none;">
+          Didn’t open? <a id="gmailLink" target="_blank" rel="noopener">Open in Gmail (web)</a>.
+        </p>
+        <p class="hint">⚡ Clicking “Send Message” will open your default mail app with the message pre-filled.</p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const TO = "aurumtoken2025@gmail.com";
+
+    function buildMailto(name, email, msg){
+      const subject = encodeURIComponent("Contact from Aurum Site");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${msg}`
+      );
+      return `mailto:${TO}?subject=${subject}&body=${body}`;
+    }
+
+    function buildGmail(name, email, msg){
+      const params = new URLSearchParams({
+        to: TO,
+        su: "Contact from Aurum Site",
+        body: `Name: ${name}\nEmail: ${email}\n\n${msg}`,
+        fs: "1",
+        tf: "cm"
+      });
+      return `https://mail.google.com/mail/?view=cm&${params.toString()}`;
+    }
+
+    function sanitize(str){
+      // tira espaços extras e evita quebras estranhas
+      return String(str || "").replace(/\r/g,"").trim();
+    }
+
+    document.getElementById("sendBtn").addEventListener("click", () => {
+      const name = sanitize(document.getElementById("name").value);
+      const email = sanitize(document.getElementById("email").value);
+      const msg = sanitize(document.getElementById("message").value);
+
+      if(!name || !email || !msg){
+        alert("Please fill in your name, email and message.");
+        return;
+      }
+
+      // 1) tenta abrir via mailto (app padrão)
+      const href = buildMailto(name, email, msg);
+      // usar location.assign evita alguns bloqueios
+      window.location.assign(href);
+
+      // 2) prepara fallback Gmail (aparece um link)
+      const gmailHref = buildGmail(name, email, msg);
+      const link = document.getElementById("gmailLink");
+      link.href = gmailHref;
+      document.getElementById("gmailNote").style.display = "block";
+    });
+  </script>
+</body>
+</html>

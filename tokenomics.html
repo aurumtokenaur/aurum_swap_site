@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Aurum Token — Tokenomics</title>
+
+  <!-- main site CSS (do not change) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Small page-specific styles (keeps global look) */
+    .tokenomics-wrap { max-width:980px; margin:100px auto 80px; padding:20px; }
+    .card { background:var(--card); border-radius:14px; padding:22px; border:1px solid #23242a; box-shadow:0 12px 28px rgba(0,0,0,.25); }
+    .heading-row { display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .heading-row h1 { margin:0; font-size:24px; color:var(--gold); }
+    .sub { color:var(--muted); margin-top:6px; font-size:14px; }
+
+    .chart-area { display:flex; gap:20px; align-items:flex-start; margin-top:18px; flex-wrap:wrap; }
+    .chart-box { flex:1 1 420px; min-width:300px; background:transparent; }
+    .info-box { flex:1 1 380px; min-width:260px; background:transparent; color:var(--muted); }
+
+    .alloc-table { width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; color:var(--text); }
+    .alloc-table th { text-align:left; color:var(--gold); padding:8px 6px; font-weight:700; }
+    .alloc-table td { padding:8px 6px; border-bottom:1px solid rgba(255,255,255,0.03); vertical-align:middle; color:var(--text); }
+    .wallet-link { color:var(--gold); text-decoration:underline; font-weight:600 }
+
+    .wallet-item { padding:10px; border-radius:10px; background:rgba(255,255,255,0.01); margin-bottom:8px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .wallet-left { display:flex; flex-direction:column; gap:4px; }
+    .wallet-label { font-weight:700; color:var(--text) }
+    .wallet-addr { font-family:monospace; color:#d6c98f; font-size:13px }
+    .copy-btn { background:var(--gold); color:#111; border:0; padding:6px 10px; border-radius:8px; font-weight:700; cursor:pointer }
+
+    @media (max-width:900px){ .chart-area{ flex-direction:column } }
+  </style>
+</head>
+<body>
+  <!-- Header & Navbar (keep same order as index) -->
+  <header class="navbar" style="position:fixed;top:0;left:0;right:0;z-index:1600;">
+    <div class="nav-left">
+      <img src="./assets/aurum-logo.png" alt="Aurum Token" class="nav-logo"/>
+      <span class="nav-title">Aurum Token</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Presale</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="tokenomics.html" class="active">Tokenomics</a>
+      <a href="about.html">About</a>
+      <a href="whitepaper.html">Whitepaper</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Ticker (same style as index) -->
+  <div class="ticker" id="prices" style="position:fixed;top:50px;left:0;right:0;z-index:1500;">
+    <div id="tickerLane" class="lane" style="display:flex;gap:28px;white-space:nowrap;align-items:center"></div>
+    <div id="topCountdown" class="top-countdown" style="margin-left:auto;color:var(--gold);font-weight:700"></div>
+  </div>
+
+  <!-- Main -->
+  <main class="tokenomics-wrap">
+    <div class="card">
+      <div class="heading-row">
+        <div>
+          <h1>📊 Aurum Token — Tokenomics</h1>
+          <div class="sub">Official distribution of the total <strong>1,000,000 AUR</strong> supply — rounded amounts</div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:var(--muted);font-size:13px">Last update: <span id="lastUpdate">—</span></div>
+        </div>
+      </div>
+
+      <div class="chart-area">
+        <!-- Chart -->
+        <div class="chart-box">
+          <canvas id="tokenChart" width="600" height="600" aria-label="Aurum distribution pie chart"></canvas>
+
+          <table class="alloc-table" role="table" aria-label="Allocations">
+            <thead>
+              <tr><th>Category</th><th>Amount</th><th>Percent</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Liquidity</td><td>300,000 AUR</td><td>30%</td></tr>
+              <tr><td>Presale</td><td>200,000 AUR</td><td>20%</td></tr>
+              <tr><td>Team / Vesting</td><td>150,000 AUR</td><td>15%</td></tr>
+              <tr><td>Marketing</td><td>100,000 AUR</td><td>10%</td></tr>
+              <tr><td>Treasury</td><td>100,000 AUR</td><td>10%</td></tr>
+              <tr><td>Staking</td><td>100,000 AUR</td><td>10%</td></tr>
+              <tr><td>Burn</td><td>50,000 AUR</td><td>5%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Wallets / Links -->
+        <div class="info-box">
+          <h3 style="margin-top:0;color:var(--gold)">On-chain wallets</h3>
+          <div style="color:var(--muted);margin-bottom:10px;font-size:14px">
+            Click a wallet to open it on BscScan (opens in a new tab). If a link doesn't open on your device, copy the address shown and paste it into BscScan search.
+          </div>
+
+          <!-- Wallet items (full links provided exactly as you sent) -->
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Liquidity</div>
+              <div class="wallet-addr">0x7433c050d6f4c8635be31a8ab0424369619141e9</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0x7433c050d6f4c8635be31a8ab0424369619141e9&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0x7433c050d6f4c8635be31a8ab0424369619141e9">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Presale</div>
+              <div class="wallet-addr">0x37d93a5e24b6e2d28f805fcc4b74f37a3fa695f7</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0x37d93a5e24b6e2d28f805fcc4b74f37a3fa695f7&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0x37d93a5e24b6e2d28f805fcc4b74f37a3fa695f7">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Team / Vesting</div>
+              <div class="wallet-addr">0xd4e8aa6e78547fae3909df8f14b9056aecc5b1dc</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0xd4e8aa6e78547fae3909df8f14b9056aecc5b1dc&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0xd4e8aa6e78547fae3909df8f14b9056aecc5b1dc">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Marketing</div>
+              <div class="wallet-addr">0x1ac546415fa2b919d30fa9437a18395bdf68c883</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0x1ac546415fa2b919d30fa9437a18395bdf68c883&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0x1ac546415fa2b919d30fa9437a18395bdf68c883">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Treasury</div>
+              <div class="wallet-addr">0x29f82e2126b2dc8f20c389381ef6d615fc5e0417</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0x29f82e2126b2dc8f20c389381ef6d615fc5e0417&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0x29f82e2126b2dc8f20c389381ef6d615fc5e0417">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Staking</div>
+              <div class="wallet-addr">0xe7e2f5d1fed08365a8c551f89da08da59a363662</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0xe7e2f5d1fed08365a8c551f89da08da59a363662&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0xe7e2f5d1fed08365a8c551f89da08da59a363662">Copy</button>
+            </div>
+          </div>
+
+          <div class="wallet-item">
+            <div class="wallet-left">
+              <div class="wallet-label">Burn</div>
+              <div class="wallet-addr">0xf2319c0332c6d1a8b64b4cbac5389b28994dd359</div>
+            </div>
+            <div>
+              <a class="wallet-link" href="https://bscscan.com/token/0xad8e960ae1d06b5ab4b49a872649e90af040f91d?a=0xf2319c0332c6d1a8b64b4cbac5389b28994dd359&s=09" target="_blank" rel="noopener">Open</a>
+              <button class="copy-btn" data-addr="0xf2319c0332c6d1a8b64b4cbac5389b28994dd359">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts: Chart + Ticker + Copy buttons -->
+  <script>
+  // Pie chart
+  const ctx = document.getElementById('tokenChart').getContext('2d');
+  const tokenChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Liquidity','Presale','Team','Marketing','Treasury','Staking','Burn'],
+      datasets: [{
+        data: [300000,200000,150000,100000,100000,100000,50000],
+        backgroundColor: ['#f0b83a','#ff7b54','#36a2eb','#9b59b6','#2ecc71','#4caf50','#e74c3c'],
+        borderColor: '#0f1013', borderWidth: 2
+      }]
+    },
+    options: {
+      cutout: '40%',
+      plugins: {
+        legend: { position: 'bottom', labels: { color: '#e9e9ef' } },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const v = ctx.raw;
+              const pct = (v / 1000000 * 100).toFixed(2);
+              return `${ctx.label}: ${v.toLocaleString()} AUR (${pct}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Ticker (Binance)
+  const SYMS=["BNBUSDT","BTCUSDT","ETHUSDT","SOLUSDT","ADAUSDT","XRPUSDT"];
+  const lane = document.getElementById('tickerLane');
+  const topCountdown = document.getElementById('topCountdown');
+  async function fetchPrices(){
+    try{
+      const url = "https://api.binance.com/api/v3/ticker/24hr?symbols=" + encodeURIComponent(JSON.stringify(SYMS));
+      const res = await fetch(url); const data = await res.json();
+      const html = data.map(t=>{
+        const sym = t.symbol.replace("USDT", "");
+        const price = parseFloat(t.lastPrice).toFixed(3);
+        const chg = parseFloat(t.priceChangePercent);
+        const cls = chg>0 ? "price-up" : chg<0 ? "price-down" : "price-stable";
+        return `<span class="item ${cls}">${sym}: $${price} (${chg.toFixed(2)}%)</span>`;
+      }).join("");
+      lane.innerHTML = html + html;
+      document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+    }catch(e){
+      lane.innerHTML = '<span class="item">Ticker error</span>';
+    }
+  }
+  fetchPrices(); setInterval(fetchPrices, 30000);
+
+  // Copy button behavior
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('.copy-btn');
+    if(!btn) return;
+    const addr = btn.getAttribute('data-addr');
+    if(!addr) return;
+    navigator.clipboard.writeText(addr).then(()=> {
+      const prev = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(()=> btn.textContent = prev, 1400);
+    }).catch(()=> {
+      alert('Copy failed — please select and copy the address manually.');
+    });
+  });
+  </script>
+</body>
+</html>
