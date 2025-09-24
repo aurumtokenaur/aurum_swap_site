@@ -383,11 +383,6 @@ body {
     padding: 15px;
   }
 }
-/* Ajuste só para celular */
-@media (max-width: 768px) {
-  .chart-container {
-    margin-bottom: 60px;  /* desce a pizza antes da tabela */
-  }
 
   .tokenomics-section {
     padding-bottom: 120px; /* força espaço extra no fim da página */
