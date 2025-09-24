@@ -321,3 +321,28 @@ a{color:var(--gold);text-decoration:none}
   align-self: flex-start;
   margin-top: 10px;
 }
+/* Faz imagens nunca passarem da largura da tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajuste global: nunca ultrapassar a tela */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ajustes especiais para celular */
+@media (max-width: 768px) {
+  .nav-links {
+    display: block;
+    text-align: center;
+  }
+  .card, .section {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
