@@ -499,7 +499,7 @@ a, .details li, .hint, p, .info {
     white-space: nowrap;       /* impede quebra de texto */
   }
 
-  /* 🔧 Ajuste da tela Tokenomics (gráfico de pizza + carteiras alinhadas) para celular */
+  /* 🔧 Ajuste completo da tela Tokenomics (gráfico + carteiras) para celular */
 @media (max-width: 768px) {
 
   /* Container principal da página Tokenomics */
@@ -513,7 +513,7 @@ a, .details li, .hint, p, .info {
     box-sizing: border-box;
   }
 
-  /* 🔹 Título e subtítulo */
+  /* 🔹 Títulos e descrições */
   .tokenomics-container h1,
   .tokenomics-container h2,
   .tokenomics-container h3 {
@@ -529,15 +529,16 @@ a, .details li, .hint, p, .info {
     margin: 8px 0;
   }
 
-  /* 🔹 Gráfico de pizza */
-  canvas, .tokenomics-chart {
-    width: 250px !important;    
-    height: 250px !important;   
+  /* 🔹 Gráfico (pizza) */
+  canvas,
+  .tokenomics-chart {
+    width: 250px !important;
+    height: 250px !important;
     margin: 0 auto;
     display: block;
   }
 
-  /* 🔹 Legenda abaixo do gráfico */
+  /* 🔹 Legenda do gráfico */
   .tokenomics-legend {
     display: flex;
     flex-direction: column;
@@ -551,7 +552,7 @@ a, .details li, .hint, p, .info {
     line-height: 1.2;
   }
 
-  /* 🔹 Cards de distribuição */
+  /* 🔹 Card geral (mantém padrão da pizza) */
   .tokenomics-card {
     width: 90%;
     margin: 8px auto;
@@ -561,13 +562,13 @@ a, .details li, .hint, p, .info {
     box-sizing: border-box;
   }
 
-  /* 🔹 Carteiras (OnShine, Shine, Shina etc.) */
+  /* 🔹 Parte inferior: On-chain wallets */
   .wallet-section,
   .onshine-wallet,
   .shine-wallet,
   .shina-wallet,
   .tokenomics-card.wallet-card {
-    width: 250px;             /* igual à pizza */
+    width: 250px;              /* igual à pizza */
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -609,9 +610,11 @@ a, .details li, .hint, p, .info {
   }
 
   /* 🔹 Geral: reduz espaçamento e margens */
-  .section, .wrap {
+  .section,
+  .wrap {
     padding: 8px 0;
   }
 }
+
 
 }
