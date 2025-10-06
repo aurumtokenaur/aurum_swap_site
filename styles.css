@@ -322,6 +322,20 @@ a{color:var(--gold);text-decoration:none}
   margin-top: 10px;
 }
 
+
+/* 🔧 Ajuste global: nunca ultrapassar a tela */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Imagens nunca passam da largura da tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ============= 🌐 MOBILE (até 768px) ============= */
 @media (max-width: 768px) {
 
