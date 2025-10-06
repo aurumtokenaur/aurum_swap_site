@@ -321,61 +321,197 @@ a{color:var(--gold);text-decoration:none}
   align-self: flex-start;
   margin-top: 10px;
 }
-/* Faz imagens nunca passarem da largura da tela */
-img {
-  max-width: 100%;
-  height: auto;
-}
 
-/* Ajuste global: nunca ultrapassar a tela */
+/* 🔧 Ajuste global: nunca ultrapassar a tela */
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* Ajustes especiais para celular */
+/* Imagens nunca passam da largura da tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============= 🌐 MOBILE (até 768px) ============= */
 @media (max-width: 768px) {
-  .nav-links {
-    display: block;
+
+  /* 🔹 Navbar e menu */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
     text-align: center;
   }
-  .card, .section {
-    width: 100%;
-    margin: 10px 0;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  /* Ajuste do menu para celular */
-@media (max-width: 768px) {
+
+  .nav-left img {
+    max-height: 40px;
+    margin-right: 8px;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
   .nav-links a {
-    margin: 6px auto;       /* antes estava 12px */
-    padding: 6px 10px;      /* antes estava 12px 16px */
-    font-size: 14px;        /* diminui um pouco */
-    width: 85%;             /* ainda ocupa boa parte da tela */
+    display: block;
+    width: 90%;
+    padding: 8px 10px;
+    margin: 4px 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
   }
 
-  .nav-bar {
-    padding: 4px 8px;       /* menos espaço interno */
+  /* 🔹 Cards e seções principais */
+  .card, .section {
+    width: 92%;
+    margin: 12px auto;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
-  .nav-bar img {
-    max-height: 35px;       /* diminui logo */
+  /* 🔹 Logo girando centralizada */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
   }
 
+  .logo-container img {
+    width: 120px;
+    height: auto;
   }
 
-  /* Títulos centralizados */
+  /* 🔹 Títulos */
   h1, h2, h3 {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
   }
 
-  /* Espaçamento geral */
-  section {
-    padding: 15px;
+  .sub {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 Roadmap (melhor alinhado e empilhado) */
+  .roadmap-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .roadmap-step {
+    width: 95%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 4px 0;
+  }
+
+  .phase-title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .phase-desc {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  /* 🔹 Inputs e botões */
+  input[type="text"] {
+    width: 90%;
+    margin: 8px auto;
+    font-size: 15px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    width: 90%;
+    margin: 8px auto;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+  }
+
+  /* 🔹 KPI badges (rede, conta, saldo) */
+  .kpi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pill {
+    width: 90%;
+    text-align: center;
+  }
+
+  /* 🔹 Progress bar e status */
+  .progress-wrap {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .progress {
+    height: 10px;
+  }
+
+  /* 🔹 Ticker */
+  .ticker {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* 🔹 Countdown */
+  .countdown-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .countdown-label {
+    font-size: 14px;
+  }
+
+  .countdown-timer {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  /* 🔹 Espaçamento geral */
+  section, .wrap {
+    padding: 10px 0;
+  }
+
+  .security-box {
+    text-align: left;
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
 
-  
   
 
 
