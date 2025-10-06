@@ -477,5 +477,28 @@ a, .details li, .hint, p, .info {
   }
 }
 
+  /* 🔧 Ajuste dos badges NETWORK / ACCOUNT / BALANCE no celular */
+@media (max-width: 768px) {
+  .kpi {
+    display: flex;
+    flex-direction: row;       /* todos na mesma linha */
+    justify-content: center;   /* centraliza na tela */
+    align-items: center;
+    flex-wrap: nowrap;         /* evita quebrar linha */
+    gap: 6px;                  /* espaçamento entre eles */
+    width: 100%;
+    overflow-x: auto;          /* se for muito estreito, permite deslizar lateralmente */
+    padding: 5px 0;
+  }
+
+  .pill {
+    flex: 1 1 30%;             /* cada um ocupa cerca de 1/3 */
+    text-align: center;
+    font-size: 13px;           /* um pouco menor */
+    padding: 6px 4px;
+    white-space: nowrap;       /* impede quebra de texto */
+  }
+}
+
 
 }
