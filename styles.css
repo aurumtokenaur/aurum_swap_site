@@ -604,10 +604,8 @@ img {
   .wrap {
     padding: 8px 0;
   }
-}
 
   box-shadow: 0 0 8px rgba(240, 184, 58, 0.5);
-}
 /* 🔧 Correção visual específica — Tokenomics menu e ticker */
 @media (max-width: 768px) {
 
@@ -632,6 +630,5 @@ img {
   body.tokenomics-page {
     padding-top: 8px;
   }
-}
 
 }
