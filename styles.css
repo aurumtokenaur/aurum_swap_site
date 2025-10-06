@@ -608,5 +608,30 @@ img {
 
   box-shadow: 0 0 8px rgba(240, 184, 58, 0.5);
 }
+/* 🔧 Correção visual específica — Tokenomics menu e ticker */
+@media (max-width: 768px) {
+
+  /* 🔹 Garante que o menu (navbar) e o ticker fiquem alinhados como nas outras páginas */
+  body.tokenomics-page .navbar {
+    margin-bottom: 0;
+    padding-bottom: 4px;
+  }
+
+  body.tokenomics-page .ticker {
+    margin-top: 4px;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* 🔹 Corrige o espaço logo abaixo da navbar para que o "Contact" fique visível */
+  body.tokenomics-page header {
+    margin-bottom: 6px;
+  }
+
+  /* 🔹 Ajuste de rolagem segura para evitar sobreposição do ticker */
+  body.tokenomics-page {
+    padding-top: 8px;
+  }
+}
 
 }
