@@ -433,5 +433,13 @@ img {
     width: 94%;
     margin: 10px auto;
     padding: 14px;
-  }
+  } 
+
+  /* 🔧 Quebra automática de links e endereços longos (como contratos) */
+a, .details li, .hint, p, .info {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
 }
