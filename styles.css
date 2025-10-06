@@ -499,39 +499,51 @@ a, .details li, .hint, p, .info {
     white-space: nowrap;       /* impede quebra de texto */
   }
 
-  /* 🔧 Ajustes gerais Tokenomics + OnShineWallet + Ticker para mobile */
+  /* 🔧 Ajuste da tela Tokenomics (gráfico de pizza + carteiras) para celular */
 @media (max-width: 768px) {
 
-  /* Container e cards menores */
-  .tokenomics-container {
+  /* Container principal da página Tokenomics */
+  .tokenomics-container,
+  .section-tokenomics,
+  .card-tokenomics {
     width: 95%;
     margin: 0 auto;
+    padding: 10px;
     text-align: center;
-  }
-
-  .card-tokenomics, .tokenomics-card {
-    width: 94%;
-    margin: 10px auto;
-    padding: 12px;
     box-sizing: border-box;
   }
 
-  h1, h2, h3 {
+  /* 🔹 Título e subtítulo */
+  .tokenomics-container h1,
+  .tokenomics-container h2,
+  .tokenomics-container h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
+    text-align: center;
   }
 
-  p, li {
+  .tokenomics-container p,
+  .tokenomics-description {
     font-size: 0.9rem;
     line-height: 1.3;
+    margin: 8px 0;
   }
 
-  /* Gráfico reduzido */
-  canvas.tokenomics-chart {
-    width: 240px !important;
-    height: 240px !important;
-    display: block;
+  /* 🔹 Gráfico de pizza */
+  canvas, .tokenomics-chart {
+    width: 250px !important;    /* antes 400–500px */
+    height: 250px !important;   /* deixa o círculo menor */
     margin: 0 auto;
+    display: block;
+  }
+
+  /* 🔹 Legenda abaixo do gráfico */
+  .tokenomics-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
   }
 
   .tokenomics-legend-item {
@@ -539,41 +551,62 @@ a, .details li, .hint, p, .info {
     line-height: 1.2;
   }
 
-  /* Listas de carteiras mais compactas */
+  /* 🔹 Cards de distribuição */
+  .tokenomics-card {
+    width: 90%;
+    margin: 8px auto;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* 🔹 Parte inferior — carteiras (OnShine, Shine, Shina, etc.) */
   .wallet-list {
     list-style: none;
     padding: 0;
     margin: 8px 0;
+    text-align: center;
   }
 
   .wallet-list li {
     font-size: 13px;
+    line-height: 1.3;
     margin: 4px 0;
     word-wrap: break-word;
     overflow-wrap: anywhere;
   }
 
-  /* Ajuste do ticker */
-  .ticker {
-    display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 13px;
-    background: #111;
-    color: #ffd700;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+  .wallet-section,
+  .onshine-wallet,
+  .shine-wallet,
+  .shina-wallet {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
   }
 
-  .lane {
-    display: inline-block;
-    animation: scrollTicker 25s linear infinite;
+  .wallet-section h3,
+  .onshine-wallet h3,
+  .shine-wallet h3,
+  .shina-wallet h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
   }
 
-  @keyframes scrollTicker {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+  .wallet-section p,
+  .onshine-wallet p,
+  .shine-wallet p,
+  .shina-wallet p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  /* 🔹 Geral: reduz espaçamento e margens */
+  .section, .wrap {
+    padding: 8px 0;
   }
 }
 
