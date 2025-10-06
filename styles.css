@@ -322,196 +322,102 @@ a{color:var(--gold);text-decoration:none}
   margin-top: 10px;
 }
 
-/* 🔧 Ajuste global: nunca ultrapassar a tela */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Imagens nunca passam da largura da tela */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* ============= 🌐 MOBILE (até 768px) ============= */
 @media (max-width: 768px) {
 
-  /* 🔹 Navbar e menu */
+  /* 🔹 Navbar compacta */
   .navbar {
     flex-direction: column;
     align-items: center;
-    padding: 8px 0;
+    padding: 6px 0;
     text-align: center;
-  }
-
-  .nav-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-left img {
-    max-height: 40px;
-    margin-right: 8px;
-  }
-
-  .nav-title {
-    font-size: 1.1rem;
   }
 
   .nav-links {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-top: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
   }
 
   .nav-links a {
-    display: block;
-    width: 90%;
-    padding: 8px 10px;
-    margin: 4px 0;
-    font-size: 14px;
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px 8px;
+    border-radius: 5px;
     text-align: center;
-    border-radius: 6px;
   }
 
-  /* 🔹 Cards e seções principais */
-  .card, .section {
-    width: 92%;
-    margin: 12px auto;
-    padding: 16px;
-    box-sizing: border-box;
+  .nav-left img {
+    max-height: 38px;
   }
 
-  /* 🔹 Logo girando centralizada */
-  .logo-container {
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  /* 🔹 Botões lado a lado */
+  .row {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    gap: 10px;              /* espaço entre eles */
+    flex-wrap: wrap;
   }
 
-  .logo-container img {
-    width: 120px;
-    height: auto;
+  .btn {
+    flex: 1 1 45%;          /* ocupa metade da largura com leve flexibilidade */
+    min-width: 130px;
+    padding: 10px;
+    font-size: 14px;
   }
 
-  /* 🔹 Títulos */
-  h1, h2, h3 {
-    text-align: center;
-    font-size: 1.3rem;
-    line-height: 1.3;
+  input[type="text"] {
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 8px;
   }
 
-  .sub {
-    text-align: center;
-    font-size: 0.95rem;
-  }
-
-  /* 🔹 Roadmap (melhor alinhado e empilhado) */
+  /* 🔹 Roadmap compacto */
   .roadmap-boxes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 6px;               /* menor espaçamento */
   }
 
   .roadmap-step {
     width: 95%;
-    text-align: center;
-    padding: 12px;
-    border-radius: 12px;
-    margin: 4px 0;
+    padding: 10px;
+    margin: 3px 0;
+    border-radius: 10px;
   }
 
   .phase-title {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
+    font-size: 1rem;
+    margin-bottom: 2px;
   }
 
   .phase-desc {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  /* 🔹 Textos e espaçamento geral */
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .sub {
     font-size: 0.9rem;
-    line-height: 1.3;
-  }
-
-  /* 🔹 Inputs e botões */
-  input[type="text"] {
-    width: 90%;
-    margin: 8px auto;
-    font-size: 15px;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-
-  .btn {
-    width: 90%;
-    margin: 8px auto;
-    font-size: 15px;
-    padding: 10px;
-    display: block;
-  }
-
-  /* 🔹 KPI badges (rede, conta, saldo) */
-  .kpi {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .pill {
-    width: 90%;
     text-align: center;
   }
 
-  /* 🔹 Progress bar e status */
-  .progress-wrap {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .progress {
-    height: 10px;
-  }
-
-  /* 🔹 Ticker */
-  .ticker {
-    font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  /* 🔹 Countdown */
-  .countdown-block {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .countdown-label {
-    font-size: 14px;
-  }
-
-  .countdown-timer {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-
-  /* 🔹 Espaçamento geral */
-  section, .wrap {
-    padding: 10px 0;
-  }
-
-  .security-box {
-    text-align: left;
-    padding: 12px;
-    font-size: 0.95rem;
+  section, .card {
+    width: 94%;
+    margin: 10px auto;
+    padding: 14px;
   }
 }
-
-  
-
-
