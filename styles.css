@@ -499,7 +499,7 @@ img {
   .section-tokenomics,
   .card-tokenomics {
     width: 95%;
-    margin: 0 auto;
+    margin: 3px 0 auto;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
