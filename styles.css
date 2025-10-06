@@ -442,4 +442,40 @@ a, .details li, .hint, p, .info {
   white-space: normal;
 }
 
+  /* 🔧 Ajuste da seção "Validate Contract" para celular */
+@media (max-width: 768px) {
+  .validate-row {
+    display: flex;
+    flex-direction: column;      /* Campo em cima, botão embaixo */
+    align-items: center;
+    width: 100%;
+    gap: 10px;                   /* Espaço entre campo e botão */
+    margin-top: 10px;
+  }
+
+  .validate-row input[type="text"] {
+    width: 90%;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .validate-row .btn {
+    width: 60%;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  #tokenStatus {
+    text-align: center;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+}
+
+
 }
