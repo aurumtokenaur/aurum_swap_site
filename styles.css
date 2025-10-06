@@ -313,17 +313,7 @@ a{color:var(--gold);text-decoration:none}
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(240, 184, 58, 0.5);
-}
-
-.contact-form button {
-  align-self: flex-start;
-  margin-top: 10px;
-}
-
-
-/* 🔧 Ajuste global: nunca ultrapassar a tela */
+  border-color: var(--gold);/* 🔧 Ajuste global: nunca ultrapassar a tela */
 body {
   margin: 0;
   padding: 0;
@@ -376,12 +366,12 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;              /* espaço entre eles */
+    gap: 10px;
     flex-wrap: wrap;
   }
 
   .btn {
-    flex: 1 1 45%;          /* ocupa metade da largura com leve flexibilidade */
+    flex: 1 1 45%;
     min-width: 130px;
     padding: 10px;
     font-size: 14px;
@@ -398,7 +388,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;               /* menor espaçamento */
+    gap: 6px;
   }
 
   .roadmap-step {
@@ -433,23 +423,22 @@ img {
     width: 94%;
     margin: 10px auto;
     padding: 14px;
-  } 
+  }
 
-  /* 🔧 Quebra automática de links e endereços longos (como contratos) */
-a, .details li, .hint, p, .info {
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
-  white-space: normal;
-}
+  /* 🔧 Quebra automática de links e endereços longos */
+  a, .details li, .hint, p, .info {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
 
-  /* 🔧 Ajuste da seção "Validate Contract" para celular */
-@media (max-width: 768px) {
+  /* 🔧 Validate Contract */
   .validate-row {
     display: flex;
-    flex-direction: column;      /* Campo em cima, botão embaixo */
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 10px;                   /* Espaço entre campo e botão */
+    gap: 10px;
     margin-top: 10px;
   }
 
@@ -475,34 +464,29 @@ a, .details li, .hint, p, .info {
     margin-top: 10px;
     line-height: 1.4;
   }
-}
 
-  /* 🔧 Ajuste dos badges NETWORK / ACCOUNT / BALANCE no celular */
-@media (max-width: 768px) {
+  /* 🔧 KPI (Network / Account / Balance) */
   .kpi {
     display: flex;
-    flex-direction: row;       /* todos na mesma linha */
-    justify-content: center;   /* centraliza na tela */
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;         /* evita quebrar linha */
-    gap: 6px;                  /* espaçamento entre eles */
+    flex-wrap: nowrap;
+    gap: 6px;
     width: 100%;
-    overflow-x: auto;          /* se for muito estreito, permite deslizar lateralmente */
+    overflow-x: auto;
     padding: 5px 0;
   }
 
   .pill {
-    flex: 1 1 30%;             /* cada um ocupa cerca de 1/3 */
+    flex: 1 1 30%;
     text-align: center;
-    font-size: 13px;           /* um pouco menor */
+    font-size: 13px;
     padding: 6px 4px;
-    white-space: nowrap;       /* impede quebra de texto */
+    white-space: nowrap;
   }
 
-  /* 🔧 Ajuste completo da tela Tokenomics (gráfico + carteiras) para celular */
-@media (max-width: 768px) {
-
-  /* Container principal da página Tokenomics */
+  /* 🔧 Tokenomics (gráfico + carteiras) */
   .tokenomics-container,
   .section-tokenomics,
   .card-tokenomics {
@@ -513,13 +497,11 @@ a, .details li, .hint, p, .info {
     box-sizing: border-box;
   }
 
-  /* 🔹 Títulos e descrições */
   .tokenomics-container h1,
   .tokenomics-container h2,
   .tokenomics-container h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
-    text-align: center;
   }
 
   .tokenomics-container p,
@@ -529,7 +511,7 @@ a, .details li, .hint, p, .info {
     margin: 8px 0;
   }
 
-  /* 🔹 Gráfico (pizza) */
+  /* Gráfico */
   canvas,
   .tokenomics-chart {
     width: 250px !important;
@@ -538,7 +520,7 @@ a, .details li, .hint, p, .info {
     display: block;
   }
 
-  /* 🔹 Legenda do gráfico */
+  /* Legenda */
   .tokenomics-legend {
     display: flex;
     flex-direction: column;
@@ -552,7 +534,7 @@ a, .details li, .hint, p, .info {
     line-height: 1.2;
   }
 
-  /* 🔹 Card geral (mantém padrão da pizza) */
+  /* Card padrão */
   .tokenomics-card {
     width: 90%;
     margin: 8px auto;
@@ -562,13 +544,13 @@ a, .details li, .hint, p, .info {
     box-sizing: border-box;
   }
 
-  /* 🔹 Parte inferior: On-chain wallets */
+  /* On-chain wallets (OnShine e outras) */
   .wallet-section,
   .onshine-wallet,
   .shine-wallet,
   .shina-wallet,
   .tokenomics-card.wallet-card {
-    width: 250px;              /* igual à pizza */
+    width: 250px;
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -609,12 +591,19 @@ a, .details li, .hint, p, .info {
     overflow-wrap: anywhere;
   }
 
-  /* 🔹 Geral: reduz espaçamento e margens */
+  /* Espaçamento final */
   .section,
   .wrap {
     padding: 8px 0;
   }
+}
 
+  box-shadow: 0 0 8px rgba(240, 184, 58, 0.5);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 10px;
 
 
 }
