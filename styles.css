@@ -605,30 +605,180 @@ img {
     padding: 8px 0;
   }
 
-  box-shadow: 0 0 8px rgba(240, 184, 58, 0.5);
-/* 🔧 Correção visual específica — Tokenomics menu e ticker */
+/* 🔧 TOKENOMICS MOBILE FINAL (versão completa e corrigida) */
 @media (max-width: 768px) {
 
-  /* 🔹 Garante que o menu (navbar) e o ticker fiquem alinhados como nas outras páginas */
-  body.tokenomics-page .navbar {
-    margin-bottom: 0;
-    padding-bottom: 4px;
+  /* Container principal da página Tokenomics */
+  .tokenomics-container,
+  .section-tokenomics,
+  .card-tokenomics {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
   }
 
-  body.tokenomics-page .ticker {
+  /* 🔹 Navbar e ticker iguais às outras páginas */
+  header.navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px 8px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .nav-left img {
+    max-height: 38px;
+  }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  .ticker {
     margin-top: 4px;
     position: relative;
     z-index: 5;
+    overflow: hidden;
   }
 
-  /* 🔹 Corrige o espaço logo abaixo da navbar para que o "Contact" fique visível */
-  body.tokenomics-page header {
+  /* 🔹 Títulos e descrições */
+  .tokenomics-container h1,
+  .tokenomics-container h2,
+  .tokenomics-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .tokenomics-container p,
+  .tokenomics-description {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin: 8px 0;
+  }
+
+  /* 🔹 Gráfico (pizza) */
+  canvas,
+  .tokenomics-chart {
+    width: 250px !important;
+    height: 250px !important;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* 🔹 Legenda */
+  .tokenomics-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+
+  .tokenomics-legend-item {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  /* 🔹 Tabela de distribuição (Category, Amount, Percent) */
+  table {
+    width: 90%;
+    margin: 8px auto;
+    font-size: 13px;
+    border-collapse: collapse;
+  }
+
+  table th,
+  table td {
+    padding: 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* 🔹 Card geral */
+  .tokenomics-card {
+    width: 90%;
+    margin: 8px auto;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  /* 🔹 Seção de carteiras (On-chain wallets / OnShine etc.) */
+  .wallet-section,
+  .onshine-wallet,
+  .shine-wallet,
+  .shina-wallet,
+  .tokenomics-card.wallet-card {
+    width: 250px; /* igual à pizza */
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .wallet-section h3,
+  .onshine-wallet h3,
+  .shine-wallet h3,
+  .shina-wallet h3 {
+    font-size: 1rem;
     margin-bottom: 6px;
   }
 
-  /* 🔹 Ajuste de rolagem segura para evitar sobreposição do ticker */
+  .wallet-section p,
+  .onshine-wallet p,
+  .shine-wallet p,
+  .shina-wallet p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .wallet-list {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0;
+    text-align: center;
+  }
+
+  .wallet-list li {
+    font-size: 13px;
+    line-height: 1.3;
+    margin: 4px 0;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* 🔹 Rodapé / espaçamento final */
+  .section,
+  .wrap {
+    padding: 8px 0;
+  }
+
+  /* 🔹 Corrige rolagem segura para não sobrepor o ticker */
   body.tokenomics-page {
     padding-top: 8px;
   }
+
 
 }
